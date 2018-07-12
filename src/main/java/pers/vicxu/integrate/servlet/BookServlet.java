@@ -18,9 +18,11 @@ public class BookServlet extends BaseServlet {
     private static final long serialVersionUID = 2418927940460181098L;
 
     @RequestMethod(mathod = "query")
-    public void query(HttpServletRequest req, HttpServletResponse resp) {
+    public void query(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Book book = PojoParamUtil.getObject(req, Book.class);
         System.out.println(book.toString());
+        req.setAttribute("book", book);
+        req.getRequestDispatcher("book.jsp").forward(req, resp);
     }
 
 //    @Override
