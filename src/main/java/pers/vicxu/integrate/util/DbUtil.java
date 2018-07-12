@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * Create By Vic Xu on 7/10/2018
  */
-public class DBUtil {
+public class DbUtil {
 
     private static Properties conf = new Properties();
     private static BasicDataSource dataSource = new BasicDataSource();
@@ -21,7 +21,7 @@ public class DBUtil {
 
     static {
         try {
-            InputStream in = DBUtil.class.getClassLoader().getResourceAsStream("dbconf.properties");
+            InputStream in = DbUtil.class.getClassLoader().getResourceAsStream("dbconf.properties");
             conf.load(in);
             url = conf.getProperty("url");
             username = conf.getProperty("username");

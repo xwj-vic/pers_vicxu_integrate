@@ -8,7 +8,7 @@ import javax.jms.*;
 /**
  * Create by JmsQueue on 7/12/2018
  */
-public abstract class JmsQueue {
+abstract class BaseJmsQueue {
 
     Connection con;
 

@@ -1,7 +1,7 @@
 package pers.vicxu.integrate.dao;
 
 import pers.vicxu.integrate.pojo.User;
-import pers.vicxu.integrate.util.DBUtil;
+import pers.vicxu.integrate.util.DbUtil;
 import pers.vicxu.integrate.util.DateUtil;
 
 import java.sql.Connection;
@@ -16,7 +16,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int addUser(User user) {
         String sql = "insert into user values(?,?,?,?,?)";
-        Connection conn = DBUtil.getConnection();
+        Connection conn = DbUtil.getConnection();
         PreparedStatement statement = null;
         int i = 0;
         try {
@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DBUtil.close(conn, statement, null);
+            DbUtil.close(conn, statement, null);
         }
         return i;
     }

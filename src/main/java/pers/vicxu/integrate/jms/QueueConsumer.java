@@ -1,6 +1,5 @@
 package pers.vicxu.integrate.jms;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 
 import javax.jms.*;
@@ -8,7 +7,7 @@ import javax.jms.*;
 /**
  * Create by QueueConsumer on 7/12/2018
  */
-public class QueueConsumer extends JmsQueue implements Consumer {
+public class QueueConsumer extends BaseJmsQueue implements Consumer {
 
     @Override
     public void receiveMsg(String queueName) {

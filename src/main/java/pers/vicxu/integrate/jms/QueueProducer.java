@@ -1,15 +1,13 @@
 package pers.vicxu.integrate.jms;
 
-import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
-import pers.vicxu.integrate.util.JmsUtil;
 
 import javax.jms.*;
 
 /**
  * Create by QueueProducer on 7/12/2018
  */
-public class QueueProducer extends JmsQueue implements Producer {
+public class QueueProducer extends BaseJmsQueue implements Producer {
     @Override
     public void producer(String str, String queueName) {
         initJms();
